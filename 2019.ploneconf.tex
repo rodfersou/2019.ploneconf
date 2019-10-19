@@ -17,25 +17,25 @@
 \date{October, 2019}
 
 \usebackgroundtemplate{%
-    \tikz\node[opacity=0.2] {
-        \vbox to \paperheight{
-            \vspace{14mm}
-            \vfil
-            \hbox to \paperwidth{
-                \hfil
-                \includegraphics[height=.6\paperheight]{./img/background.png}
-                \hfil
-            }
-            \vfil
-        }
-    };
+  \tikz\node[opacity=0.2] {
+    \vbox to \paperheight{
+      \vspace{14mm}
+      \vfil
+      \hbox to \paperwidth{
+        \hfil
+        \includegraphics[height=.6\paperheight]{./img/background.png}
+        \hfil
+      }
+      \vfil
+    }
+  };
 }
 
 \hypersetup{
-    colorlinks=true,
-    linkcolor=cyan,
-    filecolor=magenta,      
-    urlcolor=blue,
+  colorlinks=true,
+  linkcolor=cyan,
+  filecolor=magenta,      
+  urlcolor=blue,
 }
 
 \begin{document}
@@ -46,12 +46,11 @@
   \begin{frame}
     \frametitle{Where we are}
     % \begin{multicols}{2}
-    % \setcounter{tocdepth}{1}
+    \setcounter{tocdepth}{1}
     \tableofcontents[currentsection]
     % \end{multicols}
   \end{frame}
 }
-
 
 \section{Knoledgements}
 \subsection{Options to Migrate}
@@ -151,167 +150,115 @@
 \begin{frame}
   \frametitle{The challendge}
   \begin{itemize}
-    \item Plone 4.3 $\rightarrow$ Plone 5+
+    \item From:
     \begin{itemize}
-      \item \href{https://plone.com/try-plone.html}{Transmogrifier}
+      \item Python 2.x \pause
+      \item Plone 4.3.x or 5.0.x or 5.1.x \pause
+      \item Archetypes or Dexterity \pause
+      \item Old Products \pause
+      \item Sometimes other systems \pause
     \end{itemize}
-    \item Plone 5.1 $\rightarrow$ Plone 5.2+
+    \item To:
     \begin{itemize}
-      \item Transmogrifier
-      \item Database Migration
+      \item Python 3 \pause
+      \item Plone 5.2 \pause
+      \item Volto
     \end{itemize}
   \end{itemize}
 \end{frame}
 
+\subsection{Advantages for the clients}
+\begin{frame}
+  \frametitle{Advantages for the clients}
+  \begin{itemize}
+    \item They spare a migration from Plone 5 to Plone 6 \pause
+    \item At least part of it
+  \end{itemize}
+\end{frame}
 
-% \subsection{Criar páginas}
-% \begin{frame}
-%     \frametitle{Criar páginas}
-%     \begin{figure}
-%         \includegraphics[width=.7\textwidth]{./img/001-002_-_create_page.png}
-%         \caption{Menu para criação de páginas}
-%     \end{figure}
-% \end{frame}
+\subsection{Advantages for plone solutions providers}
+\begin{frame}
+  \frametitle{Advantages for plone solutions providers}
+  \begin{itemize}
+    \item A way to sell clients the Python 3 upgrade \pause
+    \item Which is costly but does not gain the client anything in terms of functionality
+  \end{itemize}
+\end{frame}
 
-% \subsection{Adicionar texto}
-% \begin{frame}
-%     \frametitle{Adicionar texto}
-%     \begin{figure}
-%         \includegraphics[height=.7\textheight]{./img/001-003_-_adicionar_texto.png}
-%         \caption{Redigindo uma página}
-%     \end{figure}
-% \end{frame}
+\section{Our way}
+\subsection{Packages}
+\begin{frame}
+  \frametitle{Packages}
+  \begin{itemize}
+    \item \href{https://github.com/kitconcept/kitconcept.contentcreator}{Kitconcept Content Creator} \pause
+    \item \href{https://github.com/kitconcept/migration-plone5/tree/master/src/kitconcept.migrator}{Kitconcept Migrator} (lives in Migration Package) \pause
+    \item \href{https://github.com/kitconcept/migration-plone5}{Migration Plone 5}
+  \end{itemize}
+\end{frame}
 
-% \subsection{Publicar}
-% \begin{frame}
-%     \frametitle{Publicar}
-%     \begin{figure}
-%         \includegraphics[width=.7\textwidth]{./img/001-004_-_publicar_pagina.png}
-%         \caption{Workflow simples - Publicar página}
-%     \end{figure}
-% \end{frame}
+\subsection{Commander Utility}
+\begin{frame}
+  \frametitle{Commander Utility}
+  \begin{figure}
+    \includegraphics[height=.7\textheight]{./img/006_-_Commander_Utility.png}
+    \caption{Commander Utility}
+  \end{figure}
+\end{frame}
 
-% \subsection{Página publicada}
-% \begin{frame}
-%     \frametitle{Página publicada}
-%     \begin{figure}
-%         \includegraphics[width=.7\textwidth]{./img/001-005_-_pagina_publicada.png}
-%         \caption{Resultado final}
-%     \end{figure}
-% \end{frame}
+\subsection{Jenkins}
+\begin{frame}
+  \frametitle{Jenkins}
+  \begin{figure}
+    \includegraphics[height=.7\textheight]{./img/007_-_Jenkins.png}
+    \caption{Jenkins}
+  \end{figure}
+\end{frame}
 
-% \subsection{portlets}
-% \begin{frame}
-%     \frametitle{portlets}
-%     \begin{figure}
-%         \includegraphics[width=.7\textwidth]{./img/001-006_-_portlets.png}
-%         \caption{gerenciador de portlets}
-%     \end{figure}
-% \end{frame}
+\subsection{Migration Server}
+\begin{frame}
+  \frametitle{Migration Server}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{./img/008_-_Migration.png}
+    \caption{Migration Server}
+  \end{figure}
+\end{frame}
 
-% \section{IDG - Identidade Digital de Governo}
-% \subsection{Portal Padrão}
-% \begin{frame}
-%     \frametitle{Portal Padrão}
-%     \begin{figure}
-%         \includegraphics[width=.7\textwidth]{./img/001-007_-_portal_padrao.png}
-%         \caption{\href{http://www.portalpadrao.gov.br/}{Site do Portal Padrão}}
-%     \end{figure}
-% \end{frame}
+\section{Live codding}
+\subsection{Our general approach}
+\begin{frame}
+  \frametitle{Our general approach}
+  \begin{figure}
+    \includegraphics[height=.7\textheight]{./img/009_-_our_way.png}
+    \caption{Running migrator by hand} \end{figure}
+\end{frame}
 
-% \subsection{Características}
-% \begin{frame}
-%     \frametitle{Características}
-%     \begin{columns}
-%         \column{.4\textwidth}
-%         Temas que seguem \href{http://emag.governoeletronico.gov.br/}{eMAG}
-%         \begin{itemize}
-%             \item \href{https://github.com/plonegovbr/brasil.gov.portal}{brasil.gov.portal} \pause
-%             \item \href{https://github.com/plonegovbr/brasil.gov.temas}{brasil.gov.temas} \pause
-%             \item \href{https://github.com/plonegovbr/brasil.gov.portlets}{brasil.gov.portlets} \pause
-%             \item \href{https://github.com/plonegovbr/brasil.gov.tiles}{brasil.gov.tiles} \pause
-%             \item \href{https://github.com/plonegovbr/brasil.gov.barra}{brasil.gov.barra} \pause
-%             \item \href{https://github.com/plonegovbr/brasil.gov.agenda}{brasil.gov.agenda} \pause
-%             \item \href{https://github.com/plonegovbr/brasil.gov.vcge}{brasil.gov.vcge}
-%         \end{itemize}
+\section{Details on how we did things}
+\subsection{General Backend}
+\begin{frame}
+  \frametitle{General Backend}
+  \begin{itemize}
+    \item ATTopics $\rightarrow$ Collection \pause
+    \item RichText $\rightarrow$ Volto Tiles \pause
+    \item Portlets
+  \end{itemize}
+\end{frame}
 
-%         \column{.3\textwidth}
-%         Complementos
-%         \begin{itemize}
-%             \item \href{https://github.com/collective/collective.cover}{Cover} \pause
-%             \item \href{https://github.com/collective/collective.fingerpointing}{Finger Pointing} \pause
-%             \item \href{https://github.com/collective/collective.lazysizes}{Lazy Sizes} \pause
-%             \item \href{https://github.com/collective/collective.liveblog}{Live Blog} \pause
-%             \item \href{https://github.com/collective/collective.nitf}{NITF} \pause
-%         \end{itemize}
-%         \column{.3\textwidth}
-%         \begin{itemize}
-%             \item \href{https://github.com/collective/collective.polls}{Polls} \pause
-%             \item \href{https://github.com/collective/collective.upload}{Upload} \pause
-%             \item \href{https://github.com/collective/sc.social.likes}{Likes} \pause
-%             \item \href{https://github.com/collective/sc.photogallery}{Photogallery} \pause
-%             \item \href{https://github.com/collective/sc.embedder}{Embedder}
-%         \end{itemize}
-%     \end{columns}
-% \end{frame}
-
-% \subsection{Cover}
-% \begin{frame}
-%     \frametitle{Cover}
-%     \begin{figure}
-%         \includegraphics[height=.7\textheight]{./img/001-008_-_cover.png}
-%         \caption{\href{https://github.com/collective/collective.cover/blob/master/docs/end-user.rst}{Tutorial para usuários}}
-%     \end{figure}
-% \end{frame}
-
-% \subsection{Upload}
-% \begin{frame}
-%     \frametitle{Upload}
-%     \begin{figure}
-%         \includegraphics[height=.7\textheight]{./img/001-009_-_upload.png}
-%         \caption{\href{https://github.com/collective/collective.upload}{Collective Upload}}
-%     \end{figure}
-% \end{frame}
-
-% \subsection{NITF e Likes}
-% \begin{frame}
-%     \frametitle{NITF e Likes}
-%     \begin{figure}
-%         \includegraphics[height=.6\textheight]{./img/001-010_-_nitf_e_likes.png}
-%         \caption{\href{https://github.com/collective/collective.nitf}{NITF} e \href{https://github.com/collective/sc.social.likes}{Likes}}
-%     \end{figure}
-% \end{frame}
-
-% \subsection{Embedder}
-% \begin{frame}
-%     \frametitle{Embedder}
-%     \begin{figure}
-%         \includegraphics[height=.6\textheight]{./img/001-011_-_embedder.png}
-%         \caption{\href{https://github.com/collective/sc.embedder}{Embedder}}
-%     \end{figure}
-% \end{frame}
-
-% \subsection{Agenda}
-% \begin{frame}
-%     \frametitle{Agenda}
-%     \begin{figure}
-%         \includegraphics[height=.6\textheight]{./img/001-012_-_agenda.png}
-%         \caption{\href{https://github.com/plonegovbr/brasil.gov.agenda}{Agenda}}
-%     \end{figure}
-% \end{frame}
-
-% \section{Columns example}
-% \subsection{Columns example}
-% \begin{frame}
-%     \frametitle{Columns example}
-%     \begin{columns}
-%         \column{.5\textwidth}
-%         \lipsum[1][1-4]
-
-%         \column{.5\textwidth}
-%         \lipsum[2][1-4]
-%     \end{columns}
-% \end{frame}
+\subsection{The Volto part}
+\begin{frame}
+  \frametitle{The Volto part}
+  \begin{itemize}
+    \item What we Polish to enter in Volto land:
+    \begin{itemize}
+      \item \href{https://github.com/collective/collective.folderishtypes}{Use Collective Folderish Types} \pause
+      \item Deal with default pages \pause
+      \item Convert RichText HTML to Volto DraftJS (node utility) \pause
+      \item Easily point to old website when content not imported \pause
+      \item Fix URLs (planned resolveuid) \pause
+      \item Simple Folders $\rightarrow$ Document with Collection Block (planned) \pause
+      \item Simple Collection $\rightarrow$ Document with Collection Block (planned)
+    \end{itemize}
+  \end{itemize}
+\end{frame}
 
 % \section{Code example}
 % \subsection{Code example}
