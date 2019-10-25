@@ -1,7 +1,9 @@
 \documentclass[aspectratio=169]{beamer}
+% notes
 % \documentclass[handout]{beamer}
 % \usepackage{pgfpages}
 % \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+% notes
 
 \usepackage[utf8]{inputenc}
 % \usepackage[portuguese]{babel}
@@ -19,8 +21,10 @@
 \author{Rodrigo Ferreira de Souza}
 \date{October, 2019}
 
+% notes
 % \setbeameroption{show notes on second screen=bottom}
 % \setbeamertemplate{note page}[plain]
+% notes
 
 \usebackgroundtemplate{%
   \tikz\node[opacity=0.2] {
@@ -87,9 +91,11 @@
     \begin{itemize}
       \item From Plone 4.3 we just have the option to use transmogrifier
       \item For Plone 5.1 you might consider use database upgrade
-      \item what means update pickle structure of ZODB to Python3 data type structure
-      \item to do it you need to: run the script in Python 2; don't start the instance (important); update buildout; run tests; start instance
-      \item during the process you might have problems with dependencies to fix
+      \begin{itemize}
+        \item what means update pickle structure of ZODB to Python3 data type structure
+        \item to do it you need to: run the script in Python 2; don't start the instance (important); update buildout; run tests; start instance
+        \item during the process you might have problems with dependencies to fix
+      \end{itemize}
       \item The term was coined by Bill Waterson of Calvin and Hobbes fame
     \end{itemize}
   }
