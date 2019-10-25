@@ -1,4 +1,7 @@
 \documentclass[aspectratio=169]{beamer}
+% \documentclass[handout]{beamer}
+\usepackage{pgfpages}
+\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
 
 \usepackage[utf8]{inputenc}
 % \usepackage[portuguese]{babel}
@@ -15,6 +18,9 @@
 \title{Data migration to Plone 5.2 and Volto}
 \author{Rodrigo Ferreira de Souza}
 \date{October, 2019}
+
+% \setbeameroption{show notes on second screen=bottom}
+% \setbeamertemplate{note page}[plain]
 
 \usebackgroundtemplate{%
   \tikz\node[opacity=0.2] {
@@ -73,9 +79,20 @@
     \column{.5\textwidth}
     \begin{figure}
       \includegraphics[height=.5\textheight]{./img/002_-_transmogrifier.png}
-      \caption{A transmogrifier is fictional device used for transforming one object into another object. The term was coined by Bill Waterson of Calvin and Hobbes fame.}
+      \caption{A transmogrifier is fictional device used for transforming one object into another object.}
     \end{figure}
   \end{columns}
+
+  \note{
+    \begin{itemize}
+      \item From Plone 4.3 we just have the option to use transmogrifier
+      \item For Plone 5.1 you might consider use database upgrade
+      \item what means update pickle structure of ZODB to Python3 data type structure
+      \item to do it you need to: run the script in Python 2; don't start the instance (important); update buildout; run tests; start instance
+      \item during the process you might have problems with dependencies to fix
+      \item The term was coined by Bill Waterson of Calvin and Hobbes fame
+    \end{itemize}
+  }
 \end{frame}
 
 \subsection{Why we use Transmogrifier?}
@@ -96,6 +113,14 @@
       \caption{Transmogrify Diagram}
     \end{figure}
   \end{columns}
+  \note{
+    How transmogrifier works:
+    \begin{itemize}
+      \item each pipeline takes the preview data items
+      \item modify;
+      \item and yield data to next pipeline.
+    \end{itemize}
+  }
 \end{frame}
 
 \begin{frame}
@@ -115,6 +140,13 @@
       \caption{Modern Times -- Production line}
     \end{figure}
   \end{columns}
+  \note{
+    \begin{itemize}
+      \item In other words, Transmogrifier allow us to create something like a production line
+      \item we have an object that is modified in each pipeline
+      \item until it get ready in the end.
+    \end{itemize}
+  }
 \end{frame}
 
 \section{Use cases}
@@ -125,6 +157,13 @@
     \includegraphics[height=.7\textheight]{./img/003_-_large_university.png}
     \caption{Large University client website}
   \end{figure}
+  \note{
+    \begin{itemize}
+      \item Not so big database;
+      \item many custom packages;
+      \item a frankenstein buildout.
+    \end{itemize}
+  }
 \end{frame}
 
 \subsection{High-profile government client}
@@ -134,15 +173,30 @@
     \includegraphics[height=.7\textheight]{./img/004_-_government_client.jpg}
     \caption{High-profile government client website}
   \end{figure}
+  \note{
+    \begin{itemize}
+      \item Many data;
+      \item Migration takes around 4 hours to run;
+      \item some addons;
+      \item custom report object type;
+      \item was 1 archetypes, becomes 10 dexterity.
+    \end{itemize}
+  }
 \end{frame}
 
-\subsection{One of the largest research institutions in Germanpngpngy}
+\subsection{One of the largest research institutions in Germany}
 \begin{frame}
   \frametitle{One of the largest research institutions in Germany}
   \begin{figure}
     \includegraphics[height=.7\textheight]{./img/005_-_research_institution.jpg}
     \caption{Large research institution client website}
   \end{figure}
+  \note{
+    \begin{itemize}
+      \item Intranet;
+      \item Had a third part system integration that needs to be imported in new website.
+    \end{itemize}
+  }
 \end{frame}
 
 \section{The challendge}
@@ -165,6 +219,9 @@
       \item Volto
     \end{itemize}
   \end{itemize}
+  \note{
+    So.. to sum up, those are the things that we need to do
+  }
 \end{frame}
 
 \subsection{Advantages for the clients}
@@ -174,15 +231,21 @@
     \item They spare a migration from Plone 5 to Plone 6 \pause
     \item At least part of it
   \end{itemize}
+  \note{
+    For the clients they can spare part of the Plone 5 to Plone 6 migration
+  }
 \end{frame}
 
-\subsection{Advantages for plone solutions providers}
+\subsection{Advantages for Plone solutions providers}
 \begin{frame}
-  \frametitle{Advantages for plone solutions providers}
+  \frametitle{Advantages for Plone solutions providers}
   \begin{itemize}
     \item A way to sell clients the Python 3 upgrade \pause
     \item Which is costly but does not gain the client anything in terms of functionality
   \end{itemize}
+  \note{
+    For the soluctions providers we can sell together Python 3 with Volto
+  }
 \end{frame}
 
 \section{Our way}
@@ -191,9 +254,12 @@
   \frametitle{Packages}
   \begin{itemize}
     \item \href{https://github.com/kitconcept/kitconcept.contentcreator}{kitconcept Content Creator} \pause
-    \item \href{https://github.com/kitconcept/migration-plone5/tree/master/src/kitconcept.migrator}{kitconcept Migrator} (lives in Migration Package) \pause
+    \item \href{https://github.com/kitconcept/migration-plone5/tree/master/src/kitconcept.migrator}{kitconcept Migrator} \pause
     \item \href{https://github.com/kitconcept/migration-plone5}{Migration Plone 5}
   \end{itemize}
+  \note{
+    k.migrator lives inside the Migration Package
+  }
 \end{frame}
 
 \subsection{Commander Utility}
@@ -203,6 +269,9 @@
     \includegraphics[height=.7\textheight]{./img/006_-_Commander_Utility.png}
     \caption{Commander Utility}
   \end{figure}
+  \note{
+    We created an utility to help orchestrate the migration process.
+  }
 \end{frame}
 
 \subsection{Jenkins}
@@ -212,6 +281,9 @@
     \includegraphics[height=.7\textheight]{./img/007_-_Jenkins.png}
     \caption{Jenkins}
   \end{figure}
+  \note{
+    Each commit runs all those steps to make tests (smoke tests).
+  }
 \end{frame}
 
 \subsection{Migration Server}
@@ -221,6 +293,9 @@
     \includegraphics[width=\textwidth]{./img/008_-_Migration.png}
     \caption{Migration Server}
   \end{figure}
+  \note{
+    Also we have migration Jenkins node, that we push the button to start the migration (what takes about 4 hours to finish)
+  }
 \end{frame}
 
 % \section{Live codding}
@@ -240,8 +315,36 @@
   \begin{itemize}
     \item ATTopics $\rightarrow$ Collection \pause
     \item RichText $\rightarrow$ Volto Blocks \pause
-    \item Portlets
+    \item Portlets \pause
+    \item Postmigration
   \end{itemize}
+  \note{
+    \begin{itemize}
+      \item For ATTopics our strategy was to fix during export phase
+      \begin{itemize}
+        \item we basically run the default Plone upgrade step on the query,
+        \item and make the changes while still at Plone 4.3
+        \item and make the exported data ready for dexterity collections
+      \end{itemize}
+      \item For tinymce html to volto,
+      \begin{itemize}
+        \item we created a simple nodejs code that convert to DraftJS data,
+        \item so for each object we call this utility with our HTML,
+        \item and set the result in tile behaviour attribute.
+      \end{itemize}
+      \item Portlets are migrated, but not showed in Volto;
+      \begin{itemize}
+        \item we have one case with a special portlet that have a download URL that points to other part of the website;
+        \item so we need to keep track of this data.
+      \end{itemize}
+      \item Postmigration are some "not migrated" data (c.cover for example)
+      \begin{itemize}
+        \item that we should replace for something else after migration,
+        \item so we automated it creating some data manually
+        \item and saving the JSON extracted by restapi from this content.
+      \end{itemize}
+    \end{itemize}
+  }
 \end{frame}
 
 \subsection{The Volto part}
@@ -259,6 +362,15 @@
       \item Simple Collection $\rightarrow$ Document with Collection Block (planned)
     \end{itemize}
   \end{itemize}
+  \note{
+    \begin{itemize}
+      \item We use c.folderishtypes because in volto we don't have the concept of default pages, so for migration we need to make almost everything folderish to keep in sync the old and new website URLs
+      \item Some content types of old website is NOT going to be imported, in this case we write some code to show a link to point to the old website
+      \item Well we still don't have resolveuid concept in volto.. we plan to use something similar to what Plone does for tinymce, but with restapi and volto
+      \item Folders will be as simple document with listing block showing the folder content
+      \item Collections becomes simple cocument with listing block running the collection query
+    \end{itemize}
+  }
 \end{frame}
 
 \begin{frame}
