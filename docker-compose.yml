@@ -1,0 +1,8 @@
+version: '3.3'
+services:
+  latex:
+    image: laurenss/texlive-full:2019
+    user: 1000:1000
+    volumes:
+      - ./policy.xml:/etc/ImageMagick-6/policy.xml
+      - .:/data

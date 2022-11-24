@@ -1,9 +1,11 @@
 \documentclass[aspectratio=169]{beamer}
-% notes
-% \documentclass[handout]{beamer}
-% \usepackage{pgfpages}
-% \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
-% notes
+%\usepackage[notes]{optional}
+
+%\opt{notes}{\input{
+%    \documentclass[handout]{beamer}
+%    \usepackage{pgfpages}
+%    \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%}}
 
 \usepackage[utf8]{inputenc}
 % \usepackage[portuguese]{babel}
@@ -13,7 +15,8 @@
 \usepackage{lipsum}
 \usepackage{multicol}
 
-\usepackage{./libs/solarized-light}
+\usepackage{./src/libs/solarized-light}
+
 
 \usetheme{Luebeck}
 
@@ -21,10 +24,10 @@
 \author{Rodrigo Ferreira de Souza}
 \date{October, 2019}
 
-% notes
-% \setbeameroption{show notes on second screen=bottom}
-% \setbeamertemplate{note page}[plain]
-% notes
+%\opt{notes}{\input{
+%    \setbeameroption{show notes on second screen=bottom}
+%    \setbeamertemplate{note page}[plain]
+%}}
 
 \usebackgroundtemplate{%
   \tikz\node[opacity=0.2] {
@@ -33,7 +36,7 @@
       \vfil
       \hbox to \paperwidth{
         \hfil
-        \includegraphics[height=.6\paperheight]{./img/background.png}
+        \includegraphics[height=.6\paperheight]{./src/img/background.png}
         \hfil
       }
       \vfil
@@ -82,7 +85,7 @@
     \end{itemize}
     \column{.5\textwidth}
     \begin{figure}
-      \includegraphics[height=.5\textheight]{./img/002_-_transmogrifier.png}
+      \includegraphics[height=.5\textheight]{./src/img/002_-_transmogrifier.png}
       \caption{A transmogrifier is fictional device used for transforming one object into another object.}
     \end{figure}
   \end{columns}
@@ -115,7 +118,7 @@
 
     \column{.5\textwidth}
     \begin{figure}
-      \includegraphics[width=\textwidth]{./img/001_-_Transmogrify_Diagram.png}
+      \includegraphics[width=\textwidth]{./src/img/001_-_Transmogrify_Diagram.png}
       \caption{Transmogrify Diagram}
     \end{figure}
   \end{columns}
@@ -142,7 +145,7 @@
 
     \column{.5\textwidth}
     \begin{figure}
-      \includegraphics[width=\textwidth]{./img/001_-_modern_times.jpg}
+      \includegraphics[width=\textwidth]{./src/img/001_-_modern_times.jpg}
       \caption{Modern Times -- Production line}
     \end{figure}
   \end{columns}
@@ -160,7 +163,7 @@
 \begin{frame}
   \frametitle{Large University}
   \begin{figure}
-    \includegraphics[height=.7\textheight]{./img/003_-_large_university.png}
+    \includegraphics[height=.7\textheight]{./src/img/003_-_large_university.png}
     \caption{Large University client website}
   \end{figure}
   \note{
@@ -176,7 +179,7 @@
 \begin{frame}
   \frametitle{High-profile government client}
   \begin{figure}
-    \includegraphics[height=.7\textheight]{./img/004_-_government_client.jpg}
+    \includegraphics[height=.7\textheight]{./src/img/004_-_government_client.jpg}
     \caption{High-profile government client website}
   \end{figure}
   \note{
@@ -194,7 +197,7 @@
 \begin{frame}
   \frametitle{One of the largest research institutions in Germany}
   \begin{figure}
-    \includegraphics[height=.7\textheight]{./img/005_-_research_institution.jpg}
+    \includegraphics[height=.7\textheight]{./src/img/005_-_research_institution.jpg}
     \caption{Large research institution client website}
   \end{figure}
   \note{
@@ -272,7 +275,7 @@
 \begin{frame}
   \frametitle{Commander Utility}
   \begin{figure}
-    \includegraphics[height=.7\textheight]{./img/006_-_Commander_Utility.png}
+    \includegraphics[height=.7\textheight]{./src/img/006_-_Commander_Utility.png}
     \caption{Commander Utility}
   \end{figure}
   \note{
@@ -284,7 +287,7 @@
 \begin{frame}
   \frametitle{Jenkins}
   \begin{figure}
-    \includegraphics[height=.7\textheight]{./img/007_-_Jenkins.png}
+    \includegraphics[height=.7\textheight]{./src/img/007_-_Jenkins.png}
     \caption{Jenkins}
   \end{figure}
   \note{
@@ -296,7 +299,7 @@
 \begin{frame}
   \frametitle{Migration Server}
   \begin{figure}
-    \includegraphics[width=\textwidth]{./img/008_-_Migration.png}
+    \includegraphics[width=\textwidth]{./src/img/008_-_Migration.png}
     \caption{Migration Server}
   \end{figure}
   \note{
@@ -309,7 +312,7 @@
 % \begin{frame}
 %   \frametitle{Our general approach}
 %   \begin{figure}
-%     \includegraphics[height=.7\textheight]{./img/009_-_our_way.png}
+%     \includegraphics[height=.7\textheight]{./src/img/009_-_our_way.png}
 %     \caption{Running migrator by hand}
 %   \end{figure}
 % \end{frame}
@@ -382,13 +385,13 @@
 \begin{frame}
   \frametitle{Questions?}
   \begin{figure}
-    \includegraphics[height=.7\textheight]{./img/010_-_questions.jpg}
+    \includegraphics[height=.7\textheight]{./src/img/010_-_questions.jpg}
   \end{figure}
 \end{frame}
 
 \begin{frame}
   \begin{figure}
-    \includegraphics[height=.7\textheight]{./img/011_-_thanks.jpg}
+    \includegraphics[height=.7\textheight]{./src/img/011_-_thanks.jpg}
   \end{figure}
 \end{frame}
 
